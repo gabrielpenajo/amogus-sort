@@ -5,25 +5,33 @@ The Amogus Sort is a sorting algorithm inspired on the popular game amongus us. 
 ```
 procedure amogus_sort(arr):
   array_copy <- array
-  for each element in array:
-    votes <- x | 0 <= x <= |array|
-    if votes >= |array| / 2:
-      (optional) print "element ejected: {element}"
-      array <- array - { element }
+
+  check if the sorting is feasible for the given criteria
+  if not, invert the criteria
+
+  while array is not sorted:
+    for each element in array:
+      counter <- number of elements that break the sorting criteria
+      if counter >= |array| / 2 or array is sorted:
+        exit for
+      end if
+
+      votes <- x | 0 <= x <= |array|
+      if votes >= |array| / 2:
+        (optional) print "element ejected: {element}; votes: {votes}/{arr_size}"
+        array <- array - { element }
+      end if
+    end for
+    if arr is not sorted:
+      counter <- number of elements that break the sorting criteria
+      if counter >= |array| / 2:
+        (optional) print "the imposters have won! restarting the sorting procedure..."
+        array <- array_copy
+      end if
     end if
-  end for
-  if arr is sorted:
-    (optional) print "the crewmates have won! the array is sorted!"
-    return array
-  else:
-    counter <- number of elements that break the sorting criteria
-    if counter >= |array| / 2:
-      (optional) print "the imposters have won! restarting game..."
-      return amogus_sort(array_copy)
-    else:
-       return amogus_sort(array)
-    end if
-  end if
+  end while
+  (optional) print "the crewmates have won! the array is sorted!"
+  return array
 end procedure
 ```
 
