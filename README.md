@@ -1,6 +1,6 @@
 # amogus-sort
 
-The Amogus Sort is a sorting algorithm inspired on the notorious game Amongus Us. The algorithm works as follows:
+The Amogus Sort is a sorting algorithm inspired by the notorious game Amongus Us. The algorithm works as follows:
 
 ```
 procedure amogus_sort(arr):
